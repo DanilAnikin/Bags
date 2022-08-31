@@ -46,12 +46,12 @@ public class BagCapacityCalculator {
                 input = scanner.next();
             }
 
-            putItemInBag(itemName, itemWeight);
+            Item item = new Item(itemName, itemWeight);
+            putItemInBag(item);
         }
     }
 
-    private void putItemInBag(String itemName, double itemWeight){
-        Item item = new Item(itemName, itemWeight);
+    private void putItemInBag(Item item){
         boolean isFirstBagFull = bag1.addItem(item);
         if (isFirstBagFull) {
             System.out.println("В первом рюкзаке не хватает места, пробуем положить второй.");
